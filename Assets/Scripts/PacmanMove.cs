@@ -43,6 +43,9 @@ public class PacmanMove : MonoBehaviour {
 		} else if (gameObject.name == "pacman2"){
 			horizontal = Input.GetAxis ("HorizontalP2");
 			vertical = Input.GetAxis ("VerticalP2");
+		} else if (gameObject.name == "pacman3"){
+			horizontal = Input.GetAxis ("HorizontalP3");
+			vertical = Input.GetAxis ("VerticalP3");
 		}
 		//print ("axis6: " + axis6);
 		//print ("axis7: " + axis7);

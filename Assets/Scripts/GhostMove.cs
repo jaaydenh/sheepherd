@@ -10,7 +10,7 @@ public class GhostMove : MonoBehaviour {
 
 	// public GameObject centroidMarker;
 
-	public float fearError = 0.1f;
+	public float fearError = 0.0001f;
 	public float flockError = 4.0f;
 
 	public float fearScale = 1.0f;
@@ -21,7 +21,7 @@ public class GhostMove : MonoBehaviour {
 
 	void Start() {
 		herders = GameObject.FindGameObjectsWithTag("herder");
-		sheep = GameObject.FindGameObjectsWithTag("sheep");
+
 	}
 
     public float speed = 0.01f;
@@ -30,6 +30,8 @@ public class GhostMove : MonoBehaviour {
 	// http://gamedevelopment.tutsplus.com/series/understanding-steering-behaviors--gamedev-12732
 		
     void FixedUpdate () {	
+		sheep = GameObject.FindGameObjectsWithTag("sheep");
+
 		Vector2 fearVector = Vector2.zero; // run away from the herders * their closeness
 		foreach(GameObject h in herders) {
 
@@ -43,7 +45,7 @@ public class GhostMove : MonoBehaviour {
 				// scale it proportional to 1/distance^2, but make sure we never deal with distance=0
 				// distance^2 means that when we're very close, we overcome any amount of competing influence
 				float useDistance = Mathf.Max (sheepToHerder.magnitude, fearError);
-				float closeness = (1/ (useDistance * useDistance));
+				float closeness = (1/ (useDistance * useDistance * 15));
 				sheepToHerder *= closeness;
 
 				// and add it to the running sum
