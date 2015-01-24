@@ -2,26 +2,28 @@
 using System.Collections;
 
 public class GhostMove : MonoBehaviour {
-    public Transform[] waypoints;
-    int cur = 0;
 
-	public GameObject[] herders;
-	public GameObject[] sheep;
+	private GameObject[] herders;
+	private GameObject[] sheep;
+	private GameObject[] repulsors;
 
 	// public GameObject centroidMarker;
 
-	public float fearError = 0.0001f;
+	public float fearError = 0.1f;
 	public float flockError = 4.0f;
+	public float repulsorError = 0.1f;
 
 	public float fearScale = 1.0f;
 	public float flockScale = 0.25f;
+	public float repulsorScale = 0.25f; // should probably be <fearScale
 
 	public float fearRadius = 16.0f;
 	public float flockRadius = 16.0f;
+	public float repulsorRadius = 2.0f;
 
 	void Start() {
 		herders = GameObject.FindGameObjectsWithTag("herder");
-
+		repulsors = GameObject.FindGameObjectsWithTag("repulsor");
 	}
 
     public float speed = 0.01f;
@@ -31,7 +33,6 @@ public class GhostMove : MonoBehaviour {
 		
     void FixedUpdate () {	
 		sheep = GameObject.FindGameObjectsWithTag("sheep");
-
 		Vector2 fearVector = Vector2.zero; // run away from the herders * their closeness
 		foreach(GameObject h in herders) {
 
@@ -45,7 +46,7 @@ public class GhostMove : MonoBehaviour {
 				// scale it proportional to 1/distance^2, but make sure we never deal with distance=0
 				// distance^2 means that when we're very close, we overcome any amount of competing influence
 				float useDistance = Mathf.Max (sheepToHerder.magnitude, fearError);
-				float closeness = (1/ (useDistance * useDistance * 15));
+				float closeness = (1/ (useDistance * useDistance));
 				sheepToHerder *= closeness;
 
 				// and add it to the running sum
@@ -76,10 +77,23 @@ public class GhostMove : MonoBehaviour {
 			sheepToCentroid /= sheepToCentroid.magnitude;
 			flockVector = sheepToCentroid * contentness;
 		}
-
 		flockVector *= flockScale;
 
-		Vector2 netVector = flockVector + fearVector;
+		Vector2 repulsorVector = Vector2.zero;
+		foreach (GameObject r in repulsors) {
+			Vector2 path = (Vector2)transform.position - (Vector2)r.transform.position;
+			float distance = path.magnitude;
+			if (distance < repulsorRadius) {
+				path /= path.magnitude;
+				path *= 1/( Mathf.Max(distance, repulsorError));
+				repulsorVector += path;
+			}
+		}
+		repulsorVector *= repulsorScale;
+
+		Debug.DrawLine (transform.position, 10*((Vector2)transform.position + fearVector), Color.red, 0, false);
+
+		Vector2 netVector = flockVector + fearVector + repulsorVector;
 
 		Vector2 target = Vector2.MoveTowards(transform.position, (Vector2)transform.position + netVector, speed);
 
