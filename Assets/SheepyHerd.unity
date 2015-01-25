@@ -354,7 +354,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11413894, guid: 7a592a8960efe4bc288a9b3082f4bcb5, type: 2}
       propertyPath: flockScale
-      value: .300000012
+      value: .699999988
       objectReference: {fileID: 0}
     - target: {fileID: 11413894, guid: 7a592a8960efe4bc288a9b3082f4bcb5, type: 2}
       propertyPath: fearScale
@@ -557,11 +557,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9c6d82680881942a0f01dcb02bfd36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementError: 1.04999995
   fearError: .100000001
   flockError: .100000001
   repulsorError: .100000001
   fearScale: .800000012
-  flockScale: .300000012
+  flockScale: .699999988
   repulsorScale: 2
   fearRadius: 4
   flockRadius: 20
@@ -1252,11 +1253,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9c6d82680881942a0f01dcb02bfd36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementError: 1.04999995
   fearError: .100000001
   flockError: .100000001
   repulsorError: .100000001
   fearScale: .800000012
-  flockScale: .300000012
+  flockScale: .699999988
   repulsorScale: 2
   fearRadius: 4
   flockRadius: 20
@@ -1568,11 +1570,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9c6d82680881942a0f01dcb02bfd36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementError: 1.04999995
   fearError: .100000001
   flockError: .100000001
   repulsorError: .100000001
   fearScale: .800000012
-  flockScale: .300000012
+  flockScale: .699999988
   repulsorScale: 2
   fearRadius: 4
   flockRadius: 20
@@ -1668,6 +1671,7 @@ GameObject:
   - 212: {fileID: 766296361}
   - 61: {fileID: 766296360}
   - 114: {fileID: 766296359}
+  - 82: {fileID: 766296363}
   m_Layer: 0
   m_Name: goal
   m_TagString: Untagged
@@ -1731,6 +1735,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
+--- !u!82 &766296363
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 766296358}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: ce94d704c17234dd2a16899bfe4605ff, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &784449745
 Prefab:
   m_ObjectHideFlags: 0
@@ -2068,7 +2130,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11413894, guid: 7a592a8960efe4bc288a9b3082f4bcb5, type: 2}
       propertyPath: flockScale
-      value: .300000012
+      value: .699999988
       objectReference: {fileID: 0}
     - target: {fileID: 11413894, guid: 7a592a8960efe4bc288a9b3082f4bcb5, type: 2}
       propertyPath: fearScale
@@ -2725,11 +2787,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9c6d82680881942a0f01dcb02bfd36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementError: 1.04999995
   fearError: .100000001
   flockError: .100000001
   repulsorError: .100000001
   fearScale: .800000012
-  flockScale: .300000012
+  flockScale: .699999988
   repulsorScale: 2
   fearRadius: 4
   flockRadius: 20
@@ -3013,7 +3076,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11413894, guid: 7a592a8960efe4bc288a9b3082f4bcb5, type: 2}
       propertyPath: flockScale
-      value: .300000012
+      value: .699999988
       objectReference: {fileID: 0}
     - target: {fileID: 11413894, guid: 7a592a8960efe4bc288a9b3082f4bcb5, type: 2}
       propertyPath: fearScale
@@ -3356,8 +3419,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 1853435206}
   - 114: {fileID: 1853435207}
+  - 82: {fileID: 1853435208}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameStateManagerObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3386,11 +3450,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026bf5d8746ee4446b3f6cb1287ee5fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTime: 5
+  levelSequence:
+  - SheepyHerd
+  - SheepyHerd_Level2
+  levelTime: 35
   runTimer: 1
   youLosePanel: {fileID: 0}
   levelCompletePanel: {fileID: 0}
-  timer: {fileID: 0}
+--- !u!82 &1853435208
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1853435205}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 11f4b6af213f74dcdbae0d254b0a23ac, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1889509154
 GameObject:
   m_ObjectHideFlags: 0
@@ -3951,7 +4075,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11413894, guid: 7a592a8960efe4bc288a9b3082f4bcb5, type: 2}
       propertyPath: flockScale
-      value: .300000012
+      value: .699999988
       objectReference: {fileID: 0}
     - target: {fileID: 11413894, guid: 7a592a8960efe4bc288a9b3082f4bcb5, type: 2}
       propertyPath: fearScale

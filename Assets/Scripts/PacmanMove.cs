@@ -6,7 +6,6 @@ public class PacmanMove : MonoBehaviour {
     Vector2 dest = Vector2.zero;
 
 	public KeyCode upKey, downKey, leftKey, rightKey;
-	int sn = 0;
 
     void Start() {
         dest = transform.position;
