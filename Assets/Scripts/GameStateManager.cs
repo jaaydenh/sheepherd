@@ -37,10 +37,11 @@ public class GameStateManager : MonoBehaviour {
 	}
 
 	public void EndLevel(string result) {
+		runTimer = false;
 		if (result == "fail") {
-
+			print ("fail");
 		} else if (result == "succeed") {
-
+			print ("succeed");
 		}
 	}
 

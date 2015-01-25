@@ -24,7 +24,6 @@ public class GhostMove : MonoBehaviour {
 	void Start() {
 		herders = GameObject.FindGameObjectsWithTag("herder");
 		repulsors = GameObject.FindGameObjectsWithTag("repulsor");
-		print ("num herders: " + herders.Length);
 	}
 
     public float speed = 0.01f;
