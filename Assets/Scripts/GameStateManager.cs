@@ -13,7 +13,7 @@ public class GameStateManager : MonoBehaviour {
 	public bool runTimer = false;
 	
 	private int currLevel = 0;
-	
+	private int totalLevels = 2;
 	public GameObject youLosePanel;
 	public GameObject levelCompletePanel;
 	private Animator levelCompleteAnimation;
@@ -59,16 +59,19 @@ public class GameStateManager : MonoBehaviour {
 		}
 		if(stateOfGame == "succeed") {
 			if(Input.GetKey(KeyCode.X) || Input.GetButton("P1x")) {
-				if(++ currLevel < levelSequence.Length) {
-					currentTime = levelTime;
-					string nextLevel = levelSequence[currLevel];
-					print(string.Format("going to level {0} {1}", currLevel+1, nextLevel));
-					Application.LoadLevel(nextLevel);
-					stateOfGame = "go";
-					runTimer = true;
-				} else {
-					// out of levels...
-				}
+				currLevel= currLevel+1%levelSequence.Length;
+				//if(currLevel < levelSequence.Length) {
+
+				currentTime = levelTime;
+				string nextLevel = levelSequence[currLevel];
+				print(string.Format("going to level {0} {1}", currLevel+1, nextLevel));
+				Application.LoadLevel(nextLevel);
+				stateOfGame = "go";
+				runTimer = true;
+//				} else {
+//					// out of levels...
+//
+//				}
 				
 			}
 		}

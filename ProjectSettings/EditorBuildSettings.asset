@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Splash.unity
+  - enabled: 1
     path: Assets/SheepyHerd.unity
   - enabled: 1
     path: Assets/SheepyHerd_Level2.unity

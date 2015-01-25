@@ -39,7 +39,7 @@ public class Goal : MonoBehaviour {
 
 		sheeps = GameObject.FindGameObjectsWithTag("sheep");
 		print (string.Format("sheeps: {0}",sheeps.Length));
-		if (sheeps.Length == 1) {
+		if (sheeps.Length <= 1) {
 			GameObject gsmHolder = GameObject.Find("GameStateManagerObject");
 			GameStateManager gsm = gsmHolder.GetComponent<GameStateManager>();
 			//GameObject gsm = GameObject.Find("GameStateManager");
