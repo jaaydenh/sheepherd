@@ -1046,6 +1046,11 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 143bc678508564bc1aa15567d3e21b12, type: 2}
+    - target: {fileID: 21214278, guid: 390807c141e754b83a96323b9ef60d66, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e3ae0763dea6b45448b536bef0064695,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 390807c141e754b83a96323b9ef60d66, type: 2}
   m_RootGameObject: {fileID: 575780796}
@@ -1553,7 +1558,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 0ce845211246d432f83f2a718c67f0dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3ae0763dea6b45448b536bef0064695, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &575780802
 Transform:
@@ -4137,6 +4142,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelTime: 15
   runTimer: 1
+  youLosePanel: {fileID: 0}
+  levelCompletePanel: {fileID: 0}
   timer: {fileID: 0}
 --- !u!1 &1889509154
 GameObject:
