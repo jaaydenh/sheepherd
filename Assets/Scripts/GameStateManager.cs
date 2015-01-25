@@ -10,7 +10,12 @@ public class GameStateManager : MonoBehaviour {
 	private float currentTime;
 	public bool runTimer = false;
 
+	public GameObject youLosePanel;
+	public GameObject levelCompletePanel;
 	public GameObject timer;
+
+	private Animator youLoseAnimator;
+	private Animator levelCompleteAnimator;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +25,6 @@ public class GameStateManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(runTimer) {
-			//currentTime -= Mathf.RoundToInt(Time.time);
 			currentTime = levelTime - Time.time;
 			timer = GameObject.Find("timer_bar_fill");
 			float percentage = (currentTime / levelTime) * 4.0f;
@@ -39,11 +43,14 @@ public class GameStateManager : MonoBehaviour {
 	public void EndLevel(string result) {
 		runTimer = false;
 		if (result == "fail") {
-			print ("fail");
+			youLosePanel = GameObject.Find("YouLosePanel");
+			youLoseAnimator = youLosePanel.GetComponent<Animator>();
+			youLoseAnimator.Play("GameOverClip");
 		} else if (result == "succeed") {
-			print ("succeed");
+			levelCompletePanel = GameObject.Find("LevelCompletePanel");
+			levelCompleteAnimator = levelCompletePanel.GetComponent<Animator>();
+			levelCompleteAnimator.Play("Complete");
 		}
 	}
-
 
 }
