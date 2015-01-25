@@ -15,7 +15,15 @@ public class Goal : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		print (sheeps.Length);
+		if ((sheeps.Length <= 0) || (sheeps.Length <= 1 && Application.loadedLevelName == "SheepyHerd")) {
+			GameObject gsmHolder = GameObject.Find("GameStateManagerObject");
+			GameStateManager gsm = gsmHolder.GetComponent<GameStateManager>();
+			//GameObject gsm = GameObject.Find("GameStateManager");
+			gsm.EndLevel("succeed");
+			//gsm.GetComponent("GameStateManager").EndLevel("succeed");
+			//			GameStateManager.EndLevel("succeed");
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D co) {
@@ -39,13 +47,6 @@ public class Goal : MonoBehaviour {
 
 		sheeps = GameObject.FindGameObjectsWithTag("sheep");
 		print (string.Format("sheeps: {0}",sheeps.Length));
-		if (sheeps.Length <= 1) {
-			GameObject gsmHolder = GameObject.Find("GameStateManagerObject");
-			GameStateManager gsm = gsmHolder.GetComponent<GameStateManager>();
-			//GameObject gsm = GameObject.Find("GameStateManager");
-			gsm.EndLevel("succeed");
-			//gsm.GetComponent("GameStateManager").EndLevel("succeed");
-//			GameStateManager.EndLevel("succeed");
-		}
+
 	}
 }

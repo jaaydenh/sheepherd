@@ -4219,7 +4219,7 @@ MonoBehaviour:
   levelSequence:
   - SheepyHerd
   - SheepyHerd_Level2
-  levelTime: 225
+  levelTime: 30
   runTimer: 1
   youLosePanel: {fileID: 0}
   levelCompletePanel: {fileID: 0}
