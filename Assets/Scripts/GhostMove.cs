@@ -24,6 +24,7 @@ public class GhostMove : MonoBehaviour {
 	void Start() {
 		herders = GameObject.FindGameObjectsWithTag("herder");
 		repulsors = GameObject.FindGameObjectsWithTag("repulsor");
+		print ("num herders: " + herders.Length);
 	}
 
     public float speed = 0.01f;
@@ -47,6 +48,8 @@ public class GhostMove : MonoBehaviour {
 				// distance^2 means that when we're very close, we overcome any amount of competing influence
 				float useDistance = Mathf.Max (sheepToHerder.magnitude, fearError);
 				float closeness = (1/ (useDistance * useDistance));
+				//float closeness = 1.0f;
+
 				sheepToHerder *= closeness;
 
 				// and add it to the running sum

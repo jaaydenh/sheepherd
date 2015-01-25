@@ -6,19 +6,26 @@ public class GameStateManager : MonoBehaviour {
 	public static int StartingScore = 0;
 	private int score;
 
-	public int levelTime = 60; // in s
+	public int levelTime = 30; // in s
+	private float currentTime;
 	public bool runTimer = false;
+
+	public GameObject timer;
 
 	// Use this for initialization
 	void Start () {
-	
+		currentTime = levelTime;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(runTimer) {
-			levelTime -= Time.deltaTime;
-			if (levelTime <= 0) {
+			//currentTime -= Mathf.RoundToInt(Time.time);
+			currentTime = levelTime - Time.time;
+			timer = GameObject.Find("timer_bar_fill");
+			float percentage = (currentTime / levelTime) * 4.0f;
+			timer.transform.localScale = new Vector3(percentage,1.0f);
+			if (currentTime <= 0) {
 				EndLevel("fail");
 			}
 		}

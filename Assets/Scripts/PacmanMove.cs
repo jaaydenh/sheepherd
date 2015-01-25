@@ -37,15 +37,18 @@ public class PacmanMove : MonoBehaviour {
         rigidbody2D.MovePosition(p);
 		float horizontal = 0;
 		float vertical = 0;
-		if (gameObject.name == "pacman1") {
+		if (gameObject.name == "herder1") {
 			horizontal = Input.GetAxis ("HorizontalP1");
 			vertical = Input.GetAxis ("VerticalP1");
-		} else if (gameObject.name == "pacman2"){
+		} else if (gameObject.name == "herder2"){
 			horizontal = Input.GetAxis ("HorizontalP2");
 			vertical = Input.GetAxis ("VerticalP2");
-		} else if (gameObject.name == "pacman3"){
+		} else if (gameObject.name == "herder3"){
 			horizontal = Input.GetAxis ("HorizontalP3");
 			vertical = Input.GetAxis ("VerticalP3");
+		} else if (gameObject.name == "herder4"){
+			horizontal = Input.GetAxis ("HorizontalP4");
+			vertical = Input.GetAxis ("VerticalP4");
 		}
 		//print ("axis6: " + axis6);
 		//print ("axis7: " + axis7);
