@@ -4,6 +4,7 @@ sysinfo.txt
 # =============== #
 # Unity generated #
 # =============== #
+[Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
@@ -22,6 +23,9 @@ obj/
 *.user
 *.unityproj
 *.booproj
+
+# Unity3D generated meta files
+*.pidb.meta
 
 # ============ #
 # OS generated #
